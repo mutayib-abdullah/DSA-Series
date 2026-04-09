@@ -9,6 +9,7 @@ struct Node {
     Node* next;
 };
 //[data | next]
+
 // Step 2: Global head pointer
 Node* head = NULL;
 
