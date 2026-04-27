@@ -2,21 +2,44 @@
 using namespace std;
 
 int main() {
-    string str;
+    int r, c;
 
-    cout << "Enter a string: ";
-    cin >> str;
+    cout << "Enter rows and columns: ";
+    cin >> r >> c;
 
-    int n = str.length();
+    int A[r][c], B[r][c], C[r][c];
 
-    for(int i = 0; i < n / 2; i++) {
-        // swap characters
-        char temp = str[i];
-        str[i] = str[n - i - 1];
-        str[n - i - 1] = temp;
+    // Input Matrix A
+    cout << "Enter elements of Matrix A:\n";
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            cin >> A[i][j];
+        }
     }
 
-    cout << "Reversed string: " << str;
+    // Input Matrix B
+    cout << "Enter elements of Matrix B:\n";
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    // Sum of matrices → store in C
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    // Display result
+    cout << "Sum of matrices (C):\n";
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }

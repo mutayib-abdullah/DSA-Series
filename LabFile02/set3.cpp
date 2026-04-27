@@ -2,35 +2,21 @@
 using namespace std;
 
 int main() {
-    int a[50], b[50], merged[100];
-    int n1, n2;
+    string str;
 
-    cout << "Enter size of first array: ";
-    cin >> n1;
-    cout << "Enter elements of first array:\n";
-    for(int i = 0; i < n1; i++) {
-        cin >> a[i];
+    cout << "Enter a string: ";
+    cin >> str;
+
+    int n = str.length();
+
+    for(int i = 0; i < n / 2; i++) {
+        // swap characters
+        char temp = str[i];
+        str[i] = str[n - i - 1];
+        str[n - i - 1] = temp;
     }
 
-    cout << "Enter size of second array: ";
-    cin >> n2;
-    cout << "Enter elements of second array:\n";
-    for(int i = 0; i < n2; i++) {
-        cin >> b[i];
-    }
-
-    for(int i = 0; i < n1; i++) {
-        merged[i] = a[i];
-    }
-
-    for(int i = 0; i < n2; i++) {
-        merged[n1 + i] = b[i];
-    }
-
-    cout << "Merged array:\n";
-    for(int i = 0; i < n1 + n2; i++) {
-        cout << merged[i] << " ";
-    }
+    cout << "Reversed string: " << str;
 
     return 0;
 }

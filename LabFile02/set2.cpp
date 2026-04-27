@@ -1,30 +1,36 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int a[100], n, i, max;
+int main() {
+    int a[50], b[50], merged[100];
+    int n1, n2;
 
-    cout << "Enter size of array: ";
-    cin >> n;
-
-    cout << "Enter array elements:\n";
-    for(i = 0; i < n; i++)
-    {
+    cout << "Enter size of first array: ";
+    cin >> n1;
+    cout << "Enter elements of first array:\n";
+    for(int i = 0; i < n1; i++) {
         cin >> a[i];
     }
 
-    max = a[0];
-
-    for(i = 1; i < n; i++)
-    {
-        if(a[i] > max)
-        {
-            max = a[i];
-        }
+    cout << "Enter size of second array: ";
+    cin >> n2;
+    cout << "Enter elements of second array:\n";
+    for(int i = 0; i < n2; i++) {
+        cin >> b[i];
     }
 
-    cout << "Maximum element = " << max;
+    for(int i = 0; i < n1; i++) {
+        merged[i] = a[i];
+    }
+
+    for(int i = 0; i < n2; i++) {
+        merged[n1 + i] = b[i];
+    }
+
+    cout << "Merged array:\n";
+    for(int i = 0; i < n1 + n2; i++) {
+        cout << merged[i] << " ";
+    }
 
     return 0;
 }
