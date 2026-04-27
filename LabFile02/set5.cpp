@@ -2,44 +2,27 @@
 using namespace std;
 
 int main() {
-    int r, c;
+    int arr[] = {2, 5, 7, 10, 14, 18, 21};
+    int n = 7;
+    int key = 10;
 
-    cout << "Enter rows and columns: ";
-    cin >> r >> c;
+    int left = 0, right = n - 1;
 
-    int A[r][c], B[r][c], C[r][c];
+    while (left <= right) {
+        int mid = (left + right) / 2;
 
-    // Input Matrix A
-    cout << "Enter elements of Matrix A:\n";
-    for(int i = 0; i < r; i++) {
-        for(int j = 0; j < c; j++) {
-            cin >> A[i][j];
+        if (arr[mid] == key) {
+            cout << "Element found at index " << mid;
+            return 0;
+        }
+        else if (arr[mid] < key) {
+            left = mid + 1;   
+        }
+        else {
+            right = mid - 1;  
         }
     }
 
-    // Input Matrix B
-    cout << "Enter elements of Matrix B:\n";
-    for(int i = 0; i < r; i++) {
-        for(int j = 0; j < c; j++) {
-            cin >> B[i][j];
-        }
-    }
-
-    // Sum of matrices → store in C
-    for(int i = 0; i < r; i++) {
-        for(int j = 0; j < c; j++) {
-            C[i][j] = A[i][j] + B[i][j];
-        }
-    }
-
-    // Display result
-    cout << "Sum of matrices (C):\n";
-    for(int i = 0; i < r; i++) {
-        for(int j = 0; j < c; j++) {
-            cout << C[i][j] << " ";
-        }
-        cout << endl;
-    }
-
+    cout << "Element not found";
     return 0;
 }

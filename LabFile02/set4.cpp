@@ -9,7 +9,6 @@ int main() {
 
     int A[r][c], B[r][c], C[r][c];
 
-    // Input Matrix A
     cout << "Enter elements of Matrix A:\n";
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
@@ -17,7 +16,6 @@ int main() {
         }
     }
 
-    // Input Matrix B
     cout << "Enter elements of Matrix B:\n";
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
@@ -25,7 +23,6 @@ int main() {
         }
     }
 
-    // Sum of matrices → store in C
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
             C[i][j] = A[i][j] + B[i][j];
