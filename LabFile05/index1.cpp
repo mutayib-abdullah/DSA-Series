@@ -4,6 +4,7 @@ using namespace std;
 
 int knapsack(int W, vector<int>& wt, vector<int>& val, int n)
 {
+    
     vector<vector<int>> K(n + 1, vector<int>(W + 1, 0));
 
     for (int i = 0; i <= n; i++)
